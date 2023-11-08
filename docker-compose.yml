@@ -1,0 +1,12 @@
+mysql:
+    image: mysql:8.1
+    environment:
+      MYSQL_USER: gabriel654
+      MYSQL_PASSWORD: gabriel654
+      MYSQL_DATABASE: fluxstation
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
