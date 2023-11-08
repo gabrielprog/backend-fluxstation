@@ -21,6 +21,14 @@ module.exports = {
       date: {
         type: Sequelize.DATE
       },
+      driverId: { 
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Drivers',
+          key: 'id'
+        },
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
