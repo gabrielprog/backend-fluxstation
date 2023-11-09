@@ -1,15 +1,7 @@
-class FuelStrategies {
-    static gasoline() {
-      return 5;
-    }
-  
-    static ethanol() {
-      return 1.92;
-    }
-  
-    static diesel() {
-      return 3.533;
-    }
-}
+const FuelStrategies = {
+  gasoline: 5,
+  ethanol: 1.92,
+  diesel: 3.533,
+};
 
 module.exports = FuelStrategies;
