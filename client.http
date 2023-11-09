@@ -1,0 +1,24 @@
+GET http://127.0.0.1:8080/fuel?id=b8ee87f9-940f-429f-acde-03852b069827 HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8080/driver HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "gadbriel200@gmail.com"
+}
+
+###
+
+POST http://127.0.0.1:8080/fuel HTTP/1.1
+content-type: application/json
+
+{
+  "driverId": "b8ee87f9-940f-429f-acde-03852b069827",
+  "quantityLiters": 40.2,
+  "fuelType": "Disel",
+  "totalPrice": 80.0
+}
+
