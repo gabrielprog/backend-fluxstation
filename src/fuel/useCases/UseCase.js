@@ -9,6 +9,10 @@ class UseCase {
 
     calculePriceFuel(typeFuel, liter) {
       this.fuelStrategy = FuelStrategyFactory.createStrategy(typeFuel);
+      
+      if(this.fuelStrategy == null)
+        return this.fuelEntity.price = 0;
+
       this.fuelEntity.liter = liter;
       this.fuelEntity.applyPriceFuel(this.fuelStrategy);
 
