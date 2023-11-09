@@ -8,6 +8,13 @@ class FuelGateway {
 
         id = 1;
 
+        if (id === undefined) {
+            return { 
+                fuel: 'Parâmetro "id" não foi fornecido ou é indefinido.',
+                status: 400
+            };
+        }
+
         try {
             const fuelRecordModel = new FuelRecord(sequelize);
             const options = {
