@@ -4,8 +4,8 @@ const { literal } = require('sequelize');
 
 class FuelGateway {
 
-    async read({ params }) {
-        let { id, date } = params;
+    async read({ query }) {
+        let { id, date } = query;
 
         try {
             const fuelRecordModel = new FuelRecord(sequelize);
