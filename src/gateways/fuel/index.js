@@ -3,12 +3,20 @@ const { sequelize } = require('../../db/connection');
 
 class FuelGateway {
 
+    isValidId(id) {
+        if(id === undefined) return false;
+        if(id === "") return false;
+        if(id < 0) return false;
+
+        return true;
+    }
+
     async read({ params }) {
         let { id, date } = params;
 
         id = 1;
 
-        if (id === undefined) {
+        if (!this.isValidId(id)) {
             return { 
                 fuel: 'Parâmetro "id" não foi fornecido ou é indefinido.',
                 status: 400
