@@ -10,9 +10,9 @@ class UseCase {
     calculePriceFuel(typeFuel, liter) {
       this.fuelStrategy = FuelStrategyFactory.createStrategy(typeFuel);
       this.fuelEntity.liter = liter;
-      this.fuelEntity.applyPriceFuel(this.fuelStrategy());
+      this.fuelEntity.applyPriceFuel(this.fuelStrategy);
 
-      return this.fuelEntity;
+      return this.fuelEntity.price;
     }
 }
   
