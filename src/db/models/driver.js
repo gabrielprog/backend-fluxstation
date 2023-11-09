@@ -1,15 +1,19 @@
-module.exports = (sequelize, DataTypes) => {
-  const Driver = sequelize.define('Driver', {
-    name: DataTypes.STRING,
-    email: DataTypes.STRING
-  });
+const { DataTypes } = require('sequelize');
 
-  Driver.associate = (models) => {
-    Driver.hasMany(models.FuelRecord, {
-      foreignKey: 'driverId',
-      as: 'fuelRecords',
+class Driver {
+  constructor(sequelize) {
+    this.DriverModel = sequelize.define('Driver', {
+      name: DataTypes.STRING,
+      email: DataTypes.STRING
     });
-  };
 
-  return Driver;
-};
+    this.DriverModel.associate = (models) => {
+      this.DriverModel.hasMany(models.FuelRecord, {
+        foreignKey: 'driverId',
+        as: 'fuelRecords',
+      });
+    };
+  }
+}
+
+module.exports = Driver;
