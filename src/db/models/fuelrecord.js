@@ -5,8 +5,7 @@ class FuelRecord {
     this.FuelRecordModel = sequelize.define('FuelRecord', {
       quantityLiters: DataTypes.FLOAT,
       fuelType: DataTypes.STRING,
-      totalPrice: DataTypes.FLOAT,
-      date: DataTypes.DATE,
+      totalPrice: DataTypes.FLOAT
     });
 
     this.FuelRecordModel.associate = (models) => {

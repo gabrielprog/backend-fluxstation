@@ -18,9 +18,6 @@ module.exports = {
       totalPrice: {
         type: Sequelize.FLOAT
       },
-      date: {
-        type: Sequelize.DATE
-      },
       driverId: { 
         type: Sequelize.INTEGER,
         references: {
