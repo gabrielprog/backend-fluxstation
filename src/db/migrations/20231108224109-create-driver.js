@@ -4,10 +4,10 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Drivers', {
       id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
+        primaryKey: true
       },
       name: {
         type: Sequelize.STRING

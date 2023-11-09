@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.FLOAT
       },
       driverId: { 
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         references: {
           model: 'Drivers',
           key: 'id'
