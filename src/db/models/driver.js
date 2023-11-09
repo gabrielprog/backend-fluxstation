@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Driver = sequelize.define('Driver', {
     name: DataTypes.STRING,
+    email: DataTypes.STRING
   });
 
   Driver.associate = (models) => {

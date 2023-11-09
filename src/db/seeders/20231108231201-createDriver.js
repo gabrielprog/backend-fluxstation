@@ -5,11 +5,13 @@ module.exports = {
     return queryInterface.bulkInsert('Drivers', [
       {
         name: 'Motorista 1',
+        email: 'example01@gmail.com',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
         name: 'Motorista 2',
+        email: 'example02@gmail.com',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
