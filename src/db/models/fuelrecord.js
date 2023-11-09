@@ -1,17 +1,21 @@
-module.exports = (sequelize, DataTypes) => {
-  const FuelRecord = sequelize.define('FuelRecord', {
-    quantityLiters: DataTypes.FLOAT,
-    fuelType: DataTypes.STRING,
-    totalPrice: DataTypes.FLOAT,
-    date: DataTypes.DATE,
-  });
+const { DataTypes } = require('sequelize');
 
-  FuelRecord.associate = (models) => {
-    FuelRecord.belongsTo(models.Driver, {
-      foreignKey: 'driverId',
-      onDelete: 'CASCADE',
+class FuelRecord {
+  constructor(sequelize) {
+    this.FuelRecordModel = sequelize.define('FuelRecord', {
+      quantityLiters: DataTypes.FLOAT,
+      fuelType: DataTypes.STRING,
+      totalPrice: DataTypes.FLOAT,
+      date: DataTypes.DATE,
     });
-  };
 
-  return FuelRecord;
-};
+    this.FuelRecordModel.associate = (models) => {
+      this.FuelRecordModel.belongsTo(models.Driver, {
+        foreignKey: 'driverId',
+        onDelete: 'CASCADE',
+      });
+    };
+  }
+}
+
+module.exports = FuelRecord;
