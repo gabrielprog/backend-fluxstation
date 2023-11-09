@@ -3,6 +3,6 @@ const router = express.Router();
 
 const FuelController = require("./controllers/fuel");
 
-router.get('/', FuelController.read)
+router.get('/fuel/:id', FuelController.read)
 
 module.exports = router;
