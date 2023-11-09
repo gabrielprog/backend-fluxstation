@@ -25,9 +25,9 @@ describe('UseCase', () => {
       expect(result).toBe(35.33);
     });
 
-    it('should return a message when an unsupported fuel type is provided', () => {
+    it('should return price 0 case not have type', () => {
       const useCase = new UseCase();
       const result = useCase.calculePriceFuel('unknownFuelType', 10);
-      expect(result.message).toBe('This fuel type is not supported yet.');
+      expect(result).toBe(0);
     });
 });
