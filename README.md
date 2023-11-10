@@ -113,7 +113,9 @@ opcional: ```bash npx sequelize-cli db:seed:all```
 
 ### Consultar Abastecimento
 
-- **Endpoint:** `GET http://127.0.0.1:8080/fuel?id=b93a7532-625a-4b91-a019-f13c8477b699`
+- **Endpoint:** `GET http://127.0.0.1:8080/fuel?id=b93a7532-625a-4b91-a019-f13c8477b699&date=2023-11-10`
+- **Parâmetros de Consulta Opcionais:**
+	`date` (opcional): Data específica para filtrar os abastecimentos. O formato da data deve ser YYYY-MM-DD.
 - **Resposta:**
 
     ```json
@@ -131,4 +133,9 @@ opcional: ```bash npx sequelize-cli db:seed:all```
         ]
     }
     ```
+## Observações
+
+- Se o parâmetro `date` não for fornecido, a API retornará todos os abastecimentos para o motorista especificado, independente da data.
+- Certifique-se de seguir o formato de data adequado (YYYY-MM-DD) ao fornecer o parâmetro `date`.
+- O filtro por data é opcional e pode ser combinado com outros parâmetros de consulta, conforme necessário.
 
