@@ -1,6 +1,6 @@
 # Minhas decisões
 
-Este é um projeto construído com Express e Sequelize que gerencia informações sobre motoristas e abastecimento de combustível.
+Decidi usar a arquitetura limpa, pois, como o autor diz, ela pode ser utilizada independentemente do framework e torna a lógica de negócio testável independentemente do framework. Utilizei dois design patterns, que foram o Factory e o Strategy, onde o Strategy está encapsulando o algoritmo de cálculo de preço de cada tipo de combustível. Atualmente, ele está apenas retornando o preço do combustível, mas futuramente poderia incluir impostos, entre outros. A lógica de cálculo de preço final ficou na parte da entidade Fuel, já que o foco principal de um posto é vender gasolina, então outros setores da empresa poderiam necessitar dessa lógica. Como o próprio desafio propõe criar uma solução rápida em curto período de tempo, acredito que poderia ser ainda melhor caso fosse melhor planejado.
 
 ## Pré-requisitos
 Antes de começar, certifique-se de ter o Node.js e o npm instalados em seu sistema. Além disso, é recomendável ter o MySQL instalado para este exemplo.
@@ -133,7 +133,7 @@ opcional: ```bash npx sequelize-cli db:seed:all```
         ]
     }
     ```
-## Observações
+- **Observações:**
 
 - Se o parâmetro `date` não for fornecido, a API retornará todos os abastecimentos para o motorista especificado, independente da data.
 - Certifique-se de seguir o formato de data adequado (YYYY-MM-DD) ao fornecer o parâmetro `date`.
