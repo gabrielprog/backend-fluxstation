@@ -30,7 +30,7 @@ class FuelController {
               .required('O campo "quantityLiters" é obrigatório'),
       
             fuelType: mixed()
-              .oneOf(['Gasoline', 'Diesel', 'Ethanol'], 'O campo "fuelType" deve ser um dos valores permitidos: Gasoline, Diesel, Ethanol')
+              .oneOf(['gasoline', 'diesel', 'ethanol'], 'O campo "fuelType" deve ser um dos valores permitidos: Gasoline, Diesel, Ethanol')
               .required('O campo "fuelType" é obrigatório'),
         });
 
