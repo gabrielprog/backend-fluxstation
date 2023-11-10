@@ -91,8 +91,7 @@ opcional: ```bash npx sequelize-cli db:seed:all```
     {
         "driverId": "b93a7532-625a-4b91-a019-f13c8477b699",
         "quantityLiters": 40.2,
-        "fuelType": "Diesel",
-        "totalPrice": 80.0
+        "fuelType": "Diesel"
     }
     ```
 
